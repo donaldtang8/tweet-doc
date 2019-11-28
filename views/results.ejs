@@ -33,8 +33,8 @@
     var legendSpacing = 6; // defines spacing between squares
 
     // define color scale
-    var color = d3.scaleOrdinal(d3.schemeSet3);
-    // more color scales: https://bl.ocks.org/pstuffa/3393ff2711a53975040077b7453781a9
+    var color = d3.scaleOrdinal().range(["rgb(153,222,249)", "rgb(182,86,137)", "rgb(95,134,183)"]);
+
 
     // calculate new total
     var total = d3.sum(dataset, d => d.count);
@@ -74,18 +74,6 @@
     tooltip.append('div') // add divs to the tooltip defined above  
         .attr('class', 'percent'); // add class 'percent' on the selection
 
-    // Confused? see below:
-
-    // <div id="chart">
-    //   <div class="tooltip">
-    //     <div class="label">
-    //     </div>
-    //     <div class="count">
-    //     </div>
-    //     <div class="percent">
-    //     </div>
-    //   </div>
-    // </div>
 
     dataset.forEach(function (d) {
         // d.count = +d.count; // calculate count as we iterate through the data
