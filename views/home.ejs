@@ -1,0 +1,18 @@
+<%- include('partials/header'); -%>
+<div class="home">
+    <div class="title-holder">
+        <div class="logo">
+            <img src="./assets/twitter-logo.png" alt="logo" class="logo__img">
+            <h1 class="logo__title">Tweet-Doc</h1>
+        </div>
+        <h2>Analyze Sentiments of Recent Tweets</h2>
+        <h5>Enter Twitter Handle (without '@') To Get Started</h5>
+    </div>
+    <form action="/sentiment" method="POST">
+        <input class="sentiment__input" type="text" pattern="^(\d|\w)+$" id="username" name="username"
+            placeholder="Twitter Handle" required />
+        <button class="form__btn" type="submit" name="button">Get Sentiment</button>
+    </form>
+    <div class="form__loading">Fetching results...</div>
+</div>
+<%- include('partials/footer'); -%>
