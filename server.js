@@ -41,7 +41,7 @@ function getSentiment(req, res) {
   process.stdout.on("data", data => {
     pyresults = data.toString();
     results = JSON.parse(pyresults);
-    res.render("results", { pos: results.pos, neg: results.neg, neut: results.neut, posCount: results.posCount, negCount: results.negCount, neutCount: results.neutCount });
+    res.render("results", { username: req.body.username, pos: results.pos, neg: results.neg, neut: results.neut, posCount: results.posCount, negCount: results.negCount, neutCount: results.neutCount });
   });
   // res.send(results);
 }
