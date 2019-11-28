@@ -46,8 +46,11 @@ function getSentiment(req, res) {
   // res.send(results);
 }
 
-// Creates a server which runs on port 3000 and
-// can be accessed through localhost:3000
-app.listen(3000, (req, res) => {
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+
+app.listen(port, (req, res) => {
   console.log("server running on port 3000");
 });
